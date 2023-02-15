@@ -35,6 +35,14 @@ Main feature. Complete English words by using "look" command.
 Optional complementary feature. Complete from your |zg| good words file.
 "grep" command is required.
 
+
+	let g:asc_look_good_words_file = '~/bazel-targets.txt'
+	au User asyncomplete_setup call asyncomplete#register_source({
+		\ 'name': 'look_good_words',
+		\ 'allowlist': ['text', 'markdown'],
+		\ 'completor': function('asyncomplete#sources#look#good_words'),
+		\ })
+
 >
 	let g:asc_look_good_words_file = '~/.vim/spell/en.utf-8.add'
 	au User asyncomplete_setup call asyncomplete#register_source({
